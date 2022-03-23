@@ -10,7 +10,8 @@ const Client = new Discord.Client({
 
 const prefix = "!";
 const Vin = ["Wine", "wine", "Vin", "vin"];
-const VName = ["Venti", "venti", "Barbatos", "barbatos", "drunkard", "Drunkard"];
+const VName = ["Venti", "venti", "Barbatos", "barbatos"];
+const Insulte = ["drunkard", "Drunkard", "perso inutile"];
 const Apple = ["pomme", "Pomme"];
 const Zhongli = ["Zhongli", "zhongli"]
 
@@ -30,12 +31,22 @@ Client.on("messageCreate", message => {
         message.channel.send("Hello !");
         }
 
+    for (var i=0; i < Insulte.length; i++){
+        
+        if(message.content.includes(Insulte[i])){
+        
+            message.reply("rude.");
+            
+            }
+    }   
+    
+
     //Zhongli
     for (var i=0; i < Zhongli.length; i++){
         
         if(message.content.includes(Zhongli[i])){
     
-            message.reply("Old man.");
+            message.reply("that old man.");
     
             }
         }   
